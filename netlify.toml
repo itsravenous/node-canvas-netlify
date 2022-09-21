@@ -1,0 +1,5 @@
+[build]
+  command = 'rm -rf node_modules/canvas && cp -r canvas-static node_modules/canvas'
+
+[functions]
+  external_node_modules = ['canvas', 'jsdom']
