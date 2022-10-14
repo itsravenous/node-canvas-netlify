@@ -9,6 +9,7 @@ DEFS_Debug := \
 	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-DV8_DEPRECATION_WARNINGS' \
 	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
+	'-D_GLIBCXX_USE_CXX11_ABI=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-D__STDC_FORMAT_MACROS' \
@@ -39,27 +40,29 @@ CFLAGS_C_Debug :=
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
 	-fno-rtti \
-	-std=gnu++1y
+	-std=gnu++14
 
 INCS_Debug := \
-	-I/root/.cache/node-gyp/14.20.1/include/node \
-	-I/root/.cache/node-gyp/14.20.1/src \
-	-I/root/.cache/node-gyp/14.20.1/deps/openssl/config \
-	-I/root/.cache/node-gyp/14.20.1/deps/openssl/openssl/include \
-	-I/root/.cache/node-gyp/14.20.1/deps/uv/include \
-	-I/root/.cache/node-gyp/14.20.1/deps/zlib \
-	-I/root/.cache/node-gyp/14.20.1/deps/v8/include \
+	-I/tmp/.node-gyp/16.18.0/include/node \
+	-I/tmp/.node-gyp/16.18.0/src \
+	-I/tmp/.node-gyp/16.18.0/deps/openssl/config \
+	-I/tmp/.node-gyp/16.18.0/deps/openssl/openssl/include \
+	-I/tmp/.node-gyp/16.18.0/deps/uv/include \
+	-I/tmp/.node-gyp/16.18.0/deps/zlib \
+	-I/tmp/.node-gyp/16.18.0/deps/v8/include \
 	-I$(srcdir)/../nan \
 	-I/usr/include/cairo \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib64/glib-2.0/include \
+	-I/usr/include/sysprof-4 \
 	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
-	-I/usr/include/libpng15 \
-	-I/usr/include/uuid \
-	-I/usr/include/libdrm \
-	-I/usr/include/pango-1.0 \
+	-I/usr/include/libpng16 \
 	-I/usr/include/harfbuzz \
+	-I/usr/include/libxml2 \
+	-I/usr/include/pango-1.0 \
+	-I/usr/include/libmount \
+	-I/usr/include/blkid \
 	-I/usr/include/fribidi \
 	-I/opt/homebrew/include
 
@@ -70,6 +73,7 @@ DEFS_Release := \
 	'-DV8_DEPRECATION_WARNINGS=1' \
 	'-DV8_DEPRECATION_WARNINGS' \
 	'-DV8_IMMINENT_DEPRECATION_WARNINGS' \
+	'-D_GLIBCXX_USE_CXX11_ABI=1' \
 	'-D_LARGEFILE_SOURCE' \
 	'-D_FILE_OFFSET_BITS=64' \
 	'-D__STDC_FORMAT_MACROS' \
@@ -97,27 +101,29 @@ CFLAGS_C_Release :=
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
 	-fno-rtti \
-	-std=gnu++1y
+	-std=gnu++14
 
 INCS_Release := \
-	-I/root/.cache/node-gyp/14.20.1/include/node \
-	-I/root/.cache/node-gyp/14.20.1/src \
-	-I/root/.cache/node-gyp/14.20.1/deps/openssl/config \
-	-I/root/.cache/node-gyp/14.20.1/deps/openssl/openssl/include \
-	-I/root/.cache/node-gyp/14.20.1/deps/uv/include \
-	-I/root/.cache/node-gyp/14.20.1/deps/zlib \
-	-I/root/.cache/node-gyp/14.20.1/deps/v8/include \
+	-I/tmp/.node-gyp/16.18.0/include/node \
+	-I/tmp/.node-gyp/16.18.0/src \
+	-I/tmp/.node-gyp/16.18.0/deps/openssl/config \
+	-I/tmp/.node-gyp/16.18.0/deps/openssl/openssl/include \
+	-I/tmp/.node-gyp/16.18.0/deps/uv/include \
+	-I/tmp/.node-gyp/16.18.0/deps/zlib \
+	-I/tmp/.node-gyp/16.18.0/deps/v8/include \
 	-I$(srcdir)/../nan \
 	-I/usr/include/cairo \
 	-I/usr/include/glib-2.0 \
 	-I/usr/lib64/glib-2.0/include \
+	-I/usr/include/sysprof-4 \
 	-I/usr/include/pixman-1 \
 	-I/usr/include/freetype2 \
-	-I/usr/include/libpng15 \
-	-I/usr/include/uuid \
-	-I/usr/include/libdrm \
-	-I/usr/include/pango-1.0 \
+	-I/usr/include/libpng16 \
 	-I/usr/include/harfbuzz \
+	-I/usr/include/libxml2 \
+	-I/usr/include/pango-1.0 \
+	-I/usr/include/libmount \
+	-I/usr/include/blkid \
 	-I/usr/include/fribidi \
 	-I/opt/homebrew/include
 
@@ -176,11 +182,13 @@ LDFLAGS_Release := \
 LIBS := \
 	-lpixman-1 \
 	-lcairo \
-	-lpng15 \
+	-lpng16 \
+	-lz \
 	-lpangocairo-1.0 \
 	-lpango-1.0 \
 	-lgobject-2.0 \
 	-lglib-2.0 \
+	-lharfbuzz \
 	-lfreetype \
 	-ljpeg \
 	-L/opt/homebrew/lib \
