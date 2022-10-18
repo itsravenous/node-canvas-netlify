@@ -10,6 +10,7 @@ execSync("node --version")
 .toString();
 const ldd = execSync("ldd node_modules/canvas/build/Release/canvas.node node_modules/canvas/build/Release/*.so*").toString()
 const ls = execSync("ls node_modules/canvas/build/Release").toString()
+const glibc = execSync("strings /lib64/libstdc++.so.6|grep GLIBCXX").toString()
 
 return {
 statusCode: 200,
