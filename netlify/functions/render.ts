@@ -7,14 +7,15 @@ const handler: Handler = async (event, context) => {
   const ldd = execSync(
     "ldd node_modules/canvas/build/Release/canvas.node node_modules/canvas/build/Release/*.so*"
   ).toString();
-  const canvas = createCanvas(300, 300);
+  const debug = require.resolve("canvas");
+  // const canvas = createCanvas(300, 300);
   // const ctx = canvas.getContext("2d");
   // ctx.fillRect(10, 10, 100, 100);
   // const base64 = canvas.toDataURL();
   return {
     statusCode: 200,
     headers: { "content-type": "text/plain" },
-    body: ldd,
+    body: "resolved: " + debug,
     // body: base64,
   };
 };
