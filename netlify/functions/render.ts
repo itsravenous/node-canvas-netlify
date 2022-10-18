@@ -5,7 +5,7 @@ const handler: Handler = async (event, context) => {
   const { execSync } = require("child_process");
   // execSync("cp node_modules/canvas/build/Release/libstdc++.so.6 /lib64/");
   const ldd = execSync(
-    "ldd node_modules/canvas/build/Release/canvas.node node_modules/canvas/build/Release/*.so*"
+    "ldd /var/task/node_modules/canvas/build/Release/canvas.node"
   ).toString();
   const debug = require.resolve("canvas");
   // const canvas = createCanvas(300, 300);
@@ -15,7 +15,7 @@ const handler: Handler = async (event, context) => {
   return {
     statusCode: 200,
     headers: { "content-type": "text/plain" },
-    body: "resolved: " + debug,
+    body: "ldd " + ldd + " debug: " + debug,
     // body: base64,
   };
 };
