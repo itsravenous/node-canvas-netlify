@@ -366,7 +366,7 @@
     "v8_trace_maps": 0,
     "v8_use_siphash": 1,
     "want_separate_host_toolset": 0,
-    "nodedir": "/tmp/.node-gyp/16.18.0",
+    "nodedir": "/root/.cache/node-gyp/16.18.0",
     "standalone_static_library": 1,
     "fallback_to_build": "true",
     "update_binary": "true",

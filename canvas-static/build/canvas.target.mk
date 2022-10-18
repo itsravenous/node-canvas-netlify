@@ -43,13 +43,13 @@ CFLAGS_CC_Debug := \
 	-std=gnu++14
 
 INCS_Debug := \
-	-I/tmp/.node-gyp/16.18.0/include/node \
-	-I/tmp/.node-gyp/16.18.0/src \
-	-I/tmp/.node-gyp/16.18.0/deps/openssl/config \
-	-I/tmp/.node-gyp/16.18.0/deps/openssl/openssl/include \
-	-I/tmp/.node-gyp/16.18.0/deps/uv/include \
-	-I/tmp/.node-gyp/16.18.0/deps/zlib \
-	-I/tmp/.node-gyp/16.18.0/deps/v8/include \
+	-I/root/.cache/node-gyp/16.18.0/include/node \
+	-I/root/.cache/node-gyp/16.18.0/src \
+	-I/root/.cache/node-gyp/16.18.0/deps/openssl/config \
+	-I/root/.cache/node-gyp/16.18.0/deps/openssl/openssl/include \
+	-I/root/.cache/node-gyp/16.18.0/deps/uv/include \
+	-I/root/.cache/node-gyp/16.18.0/deps/zlib \
+	-I/root/.cache/node-gyp/16.18.0/deps/v8/include \
 	-I$(srcdir)/../nan \
 	-I/usr/include/cairo \
 	-I/usr/include/glib-2.0 \
@@ -104,13 +104,13 @@ CFLAGS_CC_Release := \
 	-std=gnu++14
 
 INCS_Release := \
-	-I/tmp/.node-gyp/16.18.0/include/node \
-	-I/tmp/.node-gyp/16.18.0/src \
-	-I/tmp/.node-gyp/16.18.0/deps/openssl/config \
-	-I/tmp/.node-gyp/16.18.0/deps/openssl/openssl/include \
-	-I/tmp/.node-gyp/16.18.0/deps/uv/include \
-	-I/tmp/.node-gyp/16.18.0/deps/zlib \
-	-I/tmp/.node-gyp/16.18.0/deps/v8/include \
+	-I/root/.cache/node-gyp/16.18.0/include/node \
+	-I/root/.cache/node-gyp/16.18.0/src \
+	-I/root/.cache/node-gyp/16.18.0/deps/openssl/config \
+	-I/root/.cache/node-gyp/16.18.0/deps/openssl/openssl/include \
+	-I/root/.cache/node-gyp/16.18.0/deps/uv/include \
+	-I/root/.cache/node-gyp/16.18.0/deps/zlib \
+	-I/root/.cache/node-gyp/16.18.0/deps/v8/include \
 	-I$(srcdir)/../nan \
 	-I/usr/include/cairo \
 	-I/usr/include/glib-2.0 \
