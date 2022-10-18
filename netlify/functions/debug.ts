@@ -9,12 +9,14 @@ const handler: Handler = async (event, context) => {
     execSync("node --version")
       .toString();
   const ldd = execSync("ldd node_modules/canvas/build/Release/canvas.node node_modules/canvas/build/Release/*.so*").toString()
-  const ls = execSync("ls node_modules/canvas/build/Release").toString()
+  const ls = execSync("ls node_modules/canvas/build/Release").toString();
+
+  const glibx = execSync("ls /lib64").toString()
 
   return {
     statusCode: 200,
     headers: { "content-type": "text/plain" },
-    body: [linuxVersion, nodeVersion, ldd, ls].join("\n\n")
+    body: [linuxVersion, nodeVersion, ldd, ls, glibx].join("\n\n")
   };
 };
 
