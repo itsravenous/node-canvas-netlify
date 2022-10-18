@@ -1,15 +1,19 @@
 import { Handler } from "@netlify/functions";
-import { createCanvas } from "canvas";
 
 const handler: Handler = async (event, context) => {
   const { execSync } = require("child_process");
-  // execSync("cp node_modules/canvas/build/Release/libstdc++.so.6 /lib64/");
+  process.env.LD_LIBRARY_PATH =
+    "/var/task/node_modules/canvas/build/Release:" +
+    process.env.LD_LIBRARY_PATH;
+
+  const { createCanvas } = require("canvas");
+
   const ldd = execSync(
     "ldd /var/task/node_modules/canvas/build/Release/canvas.node"
   ).toString();
   const debug = require.resolve("canvas");
   const env = JSON.stringify(process.env, null, 2);
-  // const canvas = createCanvas(300, 300);
+  const canvas = createCanvas(300, 300);
   // const ctx = canvas.getContext("2d");
   // ctx.fillRect(10, 10, 100, 100);
   // const base64 = canvas.toDataURL();
