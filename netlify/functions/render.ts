@@ -8,6 +8,7 @@ const handler: Handler = async (event, context) => {
     "ldd /var/task/node_modules/canvas/build/Release/canvas.node"
   ).toString();
   const debug = require.resolve("canvas");
+  const env = JSON.stringify(process.env, null, 2);
   // const canvas = createCanvas(300, 300);
   // const ctx = canvas.getContext("2d");
   // ctx.fillRect(10, 10, 100, 100);
@@ -15,7 +16,7 @@ const handler: Handler = async (event, context) => {
   return {
     statusCode: 200,
     headers: { "content-type": "text/plain" },
-    body: "ldd " + ldd + " debug: " + debug,
+    body: [ldd, debug, env].join("\n\n"),
     // body: base64,
   };
 };
