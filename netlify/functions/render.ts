@@ -1,5 +1,5 @@
 import { Handler } from "@netlify/functions";
-// import { createCanvas } from "canvas";
+import { createCanvas } from "canvas";
 
 const handler: Handler = async (event, context) => {
   const { execSync } = require("child_process");
