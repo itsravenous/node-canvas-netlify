@@ -3,7 +3,7 @@ import { Handler } from "@netlify/functions";
 
 const handler: Handler = async (event, context) => {
   const { execSync } = require("child_process");
-  execSync("cp node_modules/canvas/build/Release/libstdc++.so.6 /lib64/");
+  // execSync("cp node_modules/canvas/build/Release/libstdc++.so.6 /lib64/");
   const ldd = execSync(
     "ldd node_modules/canvas/build/Release/canvas.node node_modules/canvas/build/Release/*.so*"
   ).toString();
